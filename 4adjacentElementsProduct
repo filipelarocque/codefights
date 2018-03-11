@@ -1,0 +1,24 @@
+Exercise Description:
+
+    Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+
+Example:
+
+    For inputArray = [3, 6, -2, -5, 7, 3], the output should be
+    adjacentElementsProduct(inputArray) = 21.
+
+    7 and 3 produce the largest product.
+  
+Solution code:
+
+    int adjacentElementsProduct(int[] inputArray) {
+    
+        int largestProduct = inputArray[0] * inputArray[1];
+        for (int i = 1; i < inputArray.length - 1; i++) {
+        
+            int comparator = inputArray[i] * inputArray[i + 1];
+            if (comparator > largestProduct)
+                largestProduct = comparator;
+        }
+        return largestProduct;
+    }
